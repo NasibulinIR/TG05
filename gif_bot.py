@@ -63,6 +63,7 @@ async def get_random_gif(message: Message):
 
 @dp.message(F.text == 'Найти GIF по запросу')
 async def find_gif_initialization(message: Message, state: FSMContext):
+    """Функция сохраняет запрос для поиска изображения"""
     await message.answer('Введите поисковый запрос для поиска GIF по ключевому слову (максимальная длина запроса 50 знаков)')
     await state.set_state(GifFind.waiting_of_query)
 
